@@ -1,0 +1,41 @@
+{
+  "name": "checkout-risk-sdk",
+  "version": "1.0.0",
+  "description": "This in a NPM to checkout risk sdk implementation",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build:dev": "rollup -c rollup.config.js --environment NODE_ENV:development",
+    "build": "rollup -c rollup.config.js --environment NODE_ENV:production"
+  },
+  "keywords": [
+    "react",
+    "hooks",
+    "npm",
+    "checkout-risk-sdk"
+  ],
+  "author": "Hazrat Ali",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hazrat16/checkout-risk-sdk"
+  },
+  "bugs": {
+    "url": "https://github.com/Hazrat16/checkout-risk-sdk/issues"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "^0.4.4",
+    "@types/node": "^20.14.12",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "rollup": "^4.17.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
+  }
+}
