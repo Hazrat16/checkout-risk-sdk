@@ -1,5 +1,21 @@
 import { useEffect, useState } from "react";
 
+interface RiskInstance {
+  publishRiskData: () => Promise<string>;
+}
+
+declare global {
+  interface Window {
+    Risk: {
+      init: (publicKey: string) => any;
+    };
+  }
+
+  interface RiskInstance {
+    publishRiskData: () => Promise<string>;
+  }
+}
+
 const getRiskJsSDKUrl = () => {
   if (process.env.REACT_APP_ENVIRONMENT === "prod") {
     return "https://risk.checkout.com/cdn/risk/1/risk.js";
@@ -8,8 +24,8 @@ const getRiskJsSDKUrl = () => {
   }
 };
 
-const useCheckoutRiskSDK = (publicKey) => {
-  const [risk, setRisk] = useState(null);
+const useCheckoutRiskSDK = (publicKey: string) => {
+  const [risk, setRisk] = useState<RiskInstance | null>(null);
   const [isScriptLoaded, setIsScriptLoaded] = useState(false);
   const riskJsSDKUrl = getRiskJsSDKUrl();
 
