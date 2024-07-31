@@ -12,14 +12,14 @@ Install the dependencies and devDependencies and start the server.
 npm i block-browser-back
 ```
 
-How to use
+How to use 
 
 ```sh
 import React from "react";
-import { useCheckoutRiskSDK } from "block-browser-back";
+import { useBlockBrowserBackButton } from "block-browser-back";
 
 const YourComponent = () => {
-  useCheckoutRiskSDK();
+  useBlockBrowserBackButton();
 
   return (
     <div>
@@ -30,6 +30,10 @@ const YourComponent = () => {
 
 export default YourComponent;
 ```
+
+
+
+
 
 ## License
 
